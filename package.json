@@ -1,0 +1,17 @@
+{
+  "name": "gregorian-calendar-grid-builder",
+  "version": "0.1.0",
+  "description": "Produces a 6-row calendar grid of Date objects for any given month, with configurable week start day.",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": "./src/index.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "dependencies": {}
+}
