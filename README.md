@@ -35,3 +35,10 @@ Rendering a month as a table or CSS grid is simpler when every month has the sam
 ## Edge cases
 
 The grid is built from UTC year/month/day triples so the result is identical regardless of the host's `TZ`. If you construct the input `Date` from local components near a month boundary in a timezone with DST, the local fields can shift by a day; pass a `Date` constructed via `Date.UTC(...)` to avoid this. `isOverflowDay` compares UTC months for the same reason.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
